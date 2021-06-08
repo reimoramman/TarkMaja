@@ -1,0 +1,150 @@
+Objektorienteeritud programmeerimine
+
+Aine IFI6226 Objektorienteeritud programmeerimine reedese rühma zoomi link:
+Topic: IFI6226 Objektorienteeritud programmeerimine
+Time: Feb 5, 2021 12:00 Helsinki
+Every week on Fri, until Mar 19, 2021, 7 occurrence(s)
+Feb 5, 2021 12:00
+Feb 12, 2021 12:00
+Feb 19, 2021 12:00
+Feb 26, 2021 12:00
+Mar 5, 2021 12:00
+Mar 12, 2021 12:00
+Mar 19, 2021 12:00
+Please download and import the following iCalendar (.ics) files to your calendar system.
+Weekly: https://zoom.us/meeting/tJUpdeGgrTkrGNIH9nADU7poRwecAZYkDINp/ics?icsToken=98tyKuCpqjkiEteXsRuBRowcBojoWfzztnpcjY10tEbrIgRmNRP5BPVHMZNFKdP0
+Join Zoom Meeting
+https://zoom.us/j/91428832126?pwd=b0loS3pYWWIraTZpRml2VGoyeVc5QT09
+Meeting ID: 914 2883 2126
+Passcode: 800322
+
+Üldotstarbelised arendusplatvormid
+
+Kohtume tunniplaani järgi https://meet.google.com/kck-qhhy-gcj
+teisipäevane rühm 12.00-15.30
+kolmapäevane rühm 12.15-15.45
+Sel õppeaastal tegeletakse üldjuhul Microsofti arendusplatvormidega
+Esimeseks tunniks installige omale Power Bi Desktop https://powerbi.microsoft.com/en-us/downloads/
+Erilahendused - eraldi kokkuleppel õppejõuga.
+
+Kohtumiseni!
+
+Jaagup Kippar
+
+Tarkvaraarenduse projekt
+
+meet.google.com/wxy-rekz-yjr
+
+Tere!
+
+Tuletan meelde, et esmaspäeval, 15. märtsil on oma projekti kontseptsiooni esitlemine. See toimub kell 16:00 kuni 17:30. Kui olete seni Interaktsioonidisainis ja Infosüsteemides oma tööd kenasti ära teinud, siis ei ole ka probleemi esitlemisega.
+Ma täpsustan veel teiste õppejõududega seda üritust ja saadan täpsemad juhised juhtide e-mailidele tänase päeva jooksul.
+
+Tervitades
+Inga
+
+Sissejuhatus infosüsteemidesse
+
+Tere
+
+Loengu link:
+Topic: IFI6068 Sissejuhatus infosüsteemidesse - loeng
+Time: Feb 4, 2021 10:00 Helsinki
+Every week on Thu, until May 13, 2021, 15 occurrence(s)
+Feb 4, 2021 10:00
+Feb 11, 2021 10:00
+Feb 18, 2021 10:00
+Feb 25, 2021 10:00
+Mar 4, 2021 10:00
+Mar 11, 2021 10:00
+Mar 18, 2021 10:00
+Mar 25, 2021 10:00
+Apr 1, 2021 10:00
+Apr 8, 2021 10:00
+Apr 15, 2021 10:00
+Apr 22, 2021 10:00
+Apr 29, 2021 10:00
+May 6, 2021 10:00
+May 13, 2021 10:00
+Please download and import the following iCalendar (.ics) files to your calendar system.
+Weekly: https://zoom.us/meeting/tJctceitpjsoH93Lg7zJ82wLx8EDaNuTgIGI/ics?icsToken=98tyKuCrrj0rH9yVshyORowqAo_od-_xiGJBgvoOsBiyGQoLMBTaLrpnFrNRBezX
+Join Zoom Meeting
+https://zoom.us/j/93061580259?pwd=ajJOaTIrRkFBV0VobVRpSW1mWlVUUT09
+Meeting ID: 930 6158 0259
+Passcode: 300979
+
+Neljapäevane infoteadlaste praktikum:
+Topic: IFI6068 Sissejuhatus infosüsteemidesse - infoteadlaste praktikum
+Time: Feb 4, 2021 12:00 Helsinki
+Every week on Thu, until Mar 18, 2021, 7 occurrence(s)
+Feb 4, 2021 12:00
+Feb 11, 2021 12:00
+Feb 18, 2021 12:00
+Feb 25, 2021 12:00
+Mar 4, 2021 12:00
+Mar 11, 2021 12:00
+Mar 18, 2021 12:00
+Please download and import the following iCalendar (.ics) files to your calendar system.
+Weekly: https://zoom.us/meeting/tJwld-mopjgoGdXR5teBHjHNVlb-SFLD1e8P/ics?icsToken=98tyKuCgpjsqGtyWshqGRow-Goigc_TxiHZBjadlrkrxBgJ7aCvYAO5Af4FZPPyB
+Join Zoom Meeting
+https://zoom.us/j/98800083231?pwd=U1VLV0FLSjRMMmtkQlcxejZZdWFHQT09
+Meeting ID: 988 0008 3231
+Passcode: 551432
+
+Reedene informaatikute praktikum:
+Topic: IFI6068 Sissejuhatus infosüsteemidesse - informaatikute praktikum
+Time: Feb 5, 2021 10:00 Helsinki
+Every week on Fri, until Mar 19, 2021, 7 occurrence(s)
+Feb 5, 2021 10:00
+Feb 12, 2021 10:00
+Feb 19, 2021 10:00
+Feb 26, 2021 10:00
+Mar 5, 2021 10:00
+Mar 12, 2021 10:00
+Mar 19, 2021 10:00
+Please download and import the following iCalendar (.ics) files to your calendar system.
+Weekly: https://zoom.us/meeting/tJUoc-iupjouHdyfVLQ8Jj-g-wvsKeuOdwHr/ics?icsToken=98tyKuCpqz8rHNyUtB6PRowcGY-gd-7xiH5bgqdEminJMnh5aE7xe_VUIZl6BffU
+Join Zoom Meeting
+https://zoom.us/j/91541681478?pwd=aVgzUDlnSS9BRzd5TEZuUGFmZW4rdz09
+Meeting ID: 915 4168 1478
+Passcode: 094327
+
+Tervitades
+
+Teretulemast kursusele IFI6068 Sissejuhatus infosüsteemidesse!
+
+Kogu õppetöö toimub esialgu kaugõppe vormis. Kursuse materjalid on moodle-s, loengute ja harjutustundide ajal suhtleme Zoomis.
+Palun liituge moodle-i kursusega, teie võti on kevad2021. Seal leiate ka Zoomi lingid.
+Ootan teiega kohtumist juba homme, 4.02 kell 10:15.
+
+Parimate soovidega
+Jelena Vendelin
+
+Tarkvara testimise alused
+
+Terve semester on aines IFI6230 sama zoomi link:
+Topic: IFI6230 Tarkvara testimise alused
+Time: Feb 4, 2021 12:00 Helsinki
+Every week on Thu, until May 13, 2021, 15 occurrence(s)
+Feb 4, 2021 12:00
+Feb 11, 2021 12:00
+Feb 18, 2021 12:00
+Feb 25, 2021 12:00
+Mar 4, 2021 12:00
+Mar 11, 2021 12:00
+Mar 18, 2021 12:00
+Mar 25, 2021 12:00
+Apr 1, 2021 12:00
+Apr 8, 2021 12:00
+Apr 15, 2021 12:00
+Apr 22, 2021 12:00
+Apr 29, 2021 12:00
+May 6, 2021 12:00
+May 13, 2021 12:00
+Please download and import the following iCalendar (.ics) files to your calendar system.
+Weekly: https://zoom.us/meeting/tJItcu6urzssHNPon_MlNEQlWtfpYh_GA59s/ics?icsToken=98tyKuCurj4tHNWVth-ARowAAo_4KO7zmGJdgo1tkxHaLix9RzL6AfZEIot3L__x
+Join Zoom Meeting
+https://zoom.us/j/96057610667?pwd=UmR1Q3k5S1FadFNIZis1bmxPcEp2QT09
+Meeting ID: 960 5761 0667
+Passcode: 933033
+

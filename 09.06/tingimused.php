@@ -1,22 +1,10 @@
+<?php
+    require("header.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tingimused</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-<hr />
-		<div id="topnav">
-			<a href="tarkMaja.html" id="active">Tark Maja</a>
-			<a href="seadmed.html">Seadmed</a>
-			<a href="lisa.html">Lisa</a>
-			<a href="elektripakett.html">Pakett</a>
-			<a href="tingimused.php">Tingimused</a>
-		</div>
-	<hr />
   <div id="pealkiri">
 		<h1>Tingimused</h1>
 	</div>

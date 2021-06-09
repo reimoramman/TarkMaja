@@ -1,64 +1,64 @@
 <?php
-  require("header.php");
+    require("header.php");
 ?>
 <!DOCTYPE html>
 <html lang="et">
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
-var dataPoints = [];
-
+    var dataPoints = [];
+ 
 function getDataPointsFromCSV(csv) {
-  var dataPoints = csvLines = points = [];
-  csvLines = csv.split(/[\r?\n|\r|\n]+/);
+    var dataPoints = csvLines = points = [];
+    csvLines = csv.split(/[\r?\n|\r|\n]+/);
+        
     for (var i = 0; i < csvLines.length; i++)
-      if (csvLines[i].length > 0) {
-        points = csvLines[i].split(",");
-          dataPoints.push({ 
-            x: new Date(points[0]), 
-            y: parseFloat(points[1]) 		
-	        });
-	    }
+        if (csvLines[i].length > 0) {
+            points = csvLines[i].split(",");
+            dataPoints.push({ 
+                x: new Date(points[0]), 
+                y: parseFloat(points[1]) 		
+	    });
+	}
     return dataPoints;
 }
-
+	 
 $.get("stat.csv", function(data) {
-  var chart = new CanvasJS.Chart("chartContainer", {
-    title: {
-	    text: "Chart from CSV",
-    },
-    data: [{
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title: {
+	    text: "Statistika",
+        },
+        data: [{
 	    type: "line",
 	    dataPoints: getDataPointsFromCSV(data)
-	  }]
-  });
-  chart.render();
+	}]
+    });
+		
+    chart.render();
+ 
 });
-
-</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <body>
 
 
 
-<h1>Põrandaküte</h1>
-  <form method="POST">
-    <div class="button">
-      <input type="submit" value= "Lülita sisse" name="test1" ><br>
-        <input type="submit" value= "Lülita välja" name = "test">
-
-        <span class="slider"></span>
+     <h1>Seadmed</h1>
+	 <h2><?php echo $_GET["seadme_nimetus"]?></h2>
+    <form method="POST">
+        <div class="button">
+            <input type="submit" value= "Lülita sisse" name="sisse" >
+            <input type="submit" value= "Lülita välja" name = "välja">
+            <span class="slider"></span>
         </div><br>
-  </form>
+    </form>
 
 	<div id="chartContainer" style="height: 300px; width: 100%;">
 	</div>
 
     <div class="container">
-            <div class="button">
-                <input type="button" value="Seadme tingimused">
-            </div>
-        <h2>seadme olek</h2>
+        <h2>Seadme olek</h2>
+		<p>Seadme võimsus: <?php echo $_GET["seadme_voimsus"] ?></p>
 		
             <!-- <h2>seadme logi</h2>
                     <?php
@@ -87,10 +87,13 @@ $.get("stat.csv", function(data) {
 					
 					
                 ?>  -->
-        <form method="POST">
+		<a href="tingimused.php"�>
+			<button>Tingimused</button>
+		</a><br><br>
+		<form method="POST">
            <div class="delete">
-           <br><br>
-            <input type="button" value="kustuta" name="kustuta" ><br>
+            <input type="button" value="Uuenda" name="uuenda" >
+			<input type="button" value="Kustuta" name="kustuta" >			
            </div> 
         </form>
     

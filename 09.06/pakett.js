@@ -10,7 +10,7 @@ function textAll() {
 	text1.style.display = "block";
 	text2.style.display = "block";
 	text3.style.display = "block";
-	text4.style.display = "block";
+	text4.style.display = "none";
 	} 
 }
 

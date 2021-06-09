@@ -1,4 +1,26 @@
 <?php
+	$file="tingimused.txt";
+	$linecount = 0;
+	$handle = fopen($file, "r");
+	while(!feof($handle)){
+	  $line = fgets($handle);
+	  $linecount++;
+	}
+
+	fclose($handle);
+
+	
+	$file_handle = fopen("tingimused.txt", "rb");
+	$array = array($linecount);
+	$line = 0;
+	while (!feof($file_handle) ) {
+		$line_of_text = fgets($file_handle);
+		$parts = explode(',', $line_of_text);
+		$array[$line]=$parts;
+		$line++;
+	}
+	echo $array[0][0];
+	fclose($file_handle);
     require("header.php");
 ?>
 
@@ -9,17 +31,24 @@
 		<h1>Tingimused</h1>
 	</div>
   <div id="seadmed">
-  <select>
-    <option value="0">Valige seade:</option>
-    <option value="1">Põrandaküte</option>
-    <option value="2">Boiler</option>
-    <option value="3">Külmkapp</option>
-    <option value="4">Radiaator</option>
-  </select>
-  <div>
+	
+  
+    <div>
   <br>
   <div id="sisu">
     <form method="POST">
+	<legend>Millist seadet haldad?</legend>
+	<?php
+	echo '<select name="deviceinput" id="deviceinput">' ."\n";
+	echo '<option value="" selected disabled>Seade</option>' ."\n";
+	for ($i= 0; $i < $linecount-1; $i++){
+		echo '<option value="' .$array[$i][0] .'"';
+		echo ">" .$array[$i][4] ."</option> \n";
+	
+	}
+	echo "</select> \n";
+  ?>
+	<br>
       <legend>Mis kell seade sisselülitub?</legend>
         <input type="time" name="startTime">
       <br>
@@ -34,9 +63,9 @@
 </body>
 </html>
 
-<?php if(isset($_POST["startTime"]) && isset($_POST["stopTime"])){
-  $tingimused = $_POST['startTime']. "\n". $_POST['stopTime']. "\n";
-  file_put_contents('tingimused.txt', $tingimused);
+<?php if(isset($_POST["startTime"]) && isset($_POST["deviceinput"]) && isset($_POST["stopTime"])){
+	
+	file_put_contents('tingimused.txt', $_POST['deviceinput']."," . $_POST['startTime']."," . $_POST['stopTime']."," . "\n");
 }
 ?>
 

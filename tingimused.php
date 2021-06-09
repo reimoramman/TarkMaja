@@ -52,6 +52,3 @@
 }
 ?>
 
-<?php if(isset($_POST['submit'])){
-  echo shell_exec("arvutused.py")
-}

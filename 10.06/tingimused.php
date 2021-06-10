@@ -19,7 +19,6 @@
 		$array[$line]=$parts;
 		$line++;
 	}
-	echo $array[0][0];
 	fclose($file_handle);
 	
 	if(isset($_POST["startTime"]) && isset($_POST["deviceinput"]) && isset($_POST["stopTime"]) && isset($_POST["tingimus"]) && !empty($_POST["startTime"]) && !empty($_POST["deviceinput"]) && !empty($_POST["stopTime"]) && !empty($_POST["tingimus"])){

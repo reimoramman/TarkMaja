@@ -4,6 +4,11 @@
 	$hind= file_get_contents('https://dashboard.elering.ee/api/nps/price/EE/latest');
 	
 	$v2lja=substr($hind, -10, 7);
+	
+	if (isset($_POST["price"])){
+		$all_text=implode(',', $_POST);
+		file_put_contents("pakett.txt", $all_text);
+	}
 ?>
 <!DOCTYPE html>
 <meta charset="utf-8">
@@ -14,10 +19,9 @@
         <br>
     <div class="container">
 	
-        <form class="pakett"  action="pakett.php" method="GET">
+        <form class="pakett" method="POST">
 		<script src="pakett.js"></script>
-            <legend>Fikseeritud hind või fikseerimata hind?</legend>
-			<br>
+            <legend>Fikseerimata hind, fikseeritud hind või börsihind?</legend>
 			<br>
             <label class="radiobtn">Fikseerimata
                 <input id="1" type="radio" name="price" value="fikseerimata" onclick="fikseerimata()">
@@ -55,9 +59,9 @@
             <legend>Börsihind (kW/h)</legend>
                 <input type="number" name="b6rsihind" value="<?php echo $v2lja/1000 ?>"><br>
             <br></p>
-			
-            <div class="button">
-                <input type="submit" name="submit" value="SALVESTA">
+			<br>
+            <div class="submit">
+                <input type="submit" name="submit" value="Salvesta">
             </div>
         </form>
     </div>          

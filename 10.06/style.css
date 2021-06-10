@@ -1,0 +1,50 @@
+body{
+  background-color: aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#pealkiri{
+  position: relative;
+  left: 200px;
+}
+
+#sissejuhatus{
+  position: relative;
+  left: 200px;
+}
+
+#seadmed{
+  position: relative;
+  left: 200px;
+}
+
+#sisu{
+  position: relative;
+  left: 0px;
+}
+
+#topnav{
+  overflow: hidden;
+  text-align: center;
+}
+
+#topnav a{
+  float: none;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 130%;
+}
+
+#topnav a:hover{
+	background-color: rgb(199, 199, 199);
+	
+}
+
+#topnav a#active {
+	background-color: rgb(220, 220, 220);
+}
+
+#banner{
+  text-align: center;
+}

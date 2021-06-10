@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(161, 0, 161);
+  background-color: rgba(161, 0, 161, 0.400);
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -30,6 +30,10 @@ body{
 #sisu{
   position: relative;
   left: 0px;
+}
+
+#tingimused{
+  background-color:rgba(161, 0, 161, 0.400)
 }
 
 #topnav{

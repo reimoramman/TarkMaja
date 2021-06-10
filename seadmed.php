@@ -40,15 +40,18 @@ $.get("stat.csv", function(data) {
   </script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <body>
+<div class="container">
 
 
-
-     <h1>Seadmed</h1>
-	 <h2><?php echo $_GET["seadme_nimetus"]?></h2>
+    <div id="pealkiri">
+    <h1>Seadmed</h1>
+    </div>
+    <div id="sissejuhatus">
+	<h2><?php echo $_GET["seadme_nimetus"]?></h2>
     <form method="POST">
         <div class="button">
-            <input type="submit" value= "Lülita sisse" name="sisse" >
-            <input type="submit" value= "Lülita välja" name = "välja">
+            <input type="submit" value= "LÃ¼lita sisse" name="sisse" style="background-color:rgba(161, 0, 161, 0.400)">
+            <input type="submit" value= "LÃ¼lita vÃ¤lja" name = "vÃ¤lja" style="background-color:rgba(161, 0, 161, 0.400)">
             <span class="slider"></span>
         </div><br>
     </form>
@@ -56,9 +59,8 @@ $.get("stat.csv", function(data) {
 	<div id="chartContainer" style="height: 300px; width: 100%;">
 	</div>
 
-    <div class="container">
         <h2>Seadme olek</h2>
-		<p>Seadme võimsus: <?php echo $_GET["seadme_voimsus"] ?></p>
+		<p>Seadme vÃµimsus: <?php echo $_GET["seadme_voimsus"] ?></p>
 		
             <!-- <h2>seadme logi</h2>
                     <?php
@@ -87,17 +89,18 @@ $.get("stat.csv", function(data) {
 					
 					
                 ?>  -->
-		<a href="tingimused.php"�>
+		<a href="tingimused.php">
+        <div class="onebutton" >
 			<button>Tingimused</button>
+        </div>
 		</a><br><br>
 		<form method="POST">
            <div class="delete">
-            <input type="button" value="Uuenda" name="uuenda" >
-			<input type="button" value="Kustuta" name="kustuta" >			
+            <input type="button" value="Uuenda" name="uuenda" style="background-color:rgba(161, 0, 161, 0.400)" >
+			<input type="button" value="Kustuta" name="kustuta" style="background-color:rgba(161, 0, 161, 0.400)">
            </div> 
         </form>
-    
-    </div>
-    
+</div>
+</div>
 </body>
 </html>

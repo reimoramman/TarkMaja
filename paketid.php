@@ -5,9 +5,12 @@
 <html lang="et">
 
 <body>
+    <div class="container">
+    <div id="pealkiri">
         <h1>Elektripakett</h1>
+    </div>
         <br>
-    <div class="container">   
+        <div id="sissejuhatus">
         <form class="pakett"  action="pakett.php" method="GET">
 		<script src="pakett.js"></script>
             <legend>Fikseeritud hind või fikseerimata hind?</legend>
@@ -35,9 +38,9 @@
 			<p id="text4" style="display:none">
             <legend>Müüja marginaal</legend>
                 <input type="number" name="sellerprice" value="muujamarginaal"><br>
-            <br>
             <div class="button">
-                <input type="submit" name="submit" value="SALVESTA">
+                <br>
+                <input type="submit" name="submit" value="SALVESTA" style="background-color:rgba(161, 0, 161, 0.400)">
             </div>
         </form>
     </div>          

@@ -5,10 +5,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+  <div class="container">
   <div id="pealkiri">
 		<h1>Tingimused</h1>
 	</div>
-  <div id="seadmed">
+  <div id="sissejuhatus">
   <select>
     <option value="0">Valige seade:</option>
     <option value="1">Põrandaküte</option>
@@ -27,9 +28,11 @@
         <input type="time" name="stopTime">
       <br>
       <div class="submit">
-        <input type="submit" name="submit" value="Salvesta">
+        <br>
+        <input type="submit" name="submit" value="Salvesta" style="background-color:rgba(161, 0, 161, 0.400)">
       </div>
     </form>
+  </div>
   </div>
 </body>
 </html>

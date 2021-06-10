@@ -7,7 +7,7 @@
 			<a href="tarkMaja.php" id="active">Tark Maja</a>
 			<a href="seadmed.php">Seadmed</a>
 			<a href="lisa.php">Lisa</a>
-			<a href="paketid.php">Pakett</a>
+			<a href="pakett.php">Pakett</a>
 			<a href="tingimused.php">Tingimused</a>
 		</div>
 	<div class="banner">

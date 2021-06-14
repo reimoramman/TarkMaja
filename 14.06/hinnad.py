@@ -8,14 +8,16 @@ def GetPrices():
 
     url = 'https://dashboard.elering.ee/api/nps/price/csv'
 
-    today = datetime.datetime.now().astimezone(pytz.timezone('Europe/Tallinn'))-datetime.timedelta(0,0,0,0,0,3,0)
-    tomorrow = today + datetime.timedelta(1,0,0,0,0,3,0)
+    today = datetime.datetime.now().astimezone('Europe/Tallinn')
+    tomorrow = today + datetime.timedelta(1,0,0,0,0,0,0)
 
-    todaystr = today.strftime('20%y-%m-%dT%X.999Z')
-    tomorrowstr = tomorrow.strftime('20%y-%m-%dT%X.999Z')
+    todaystr = today.strftime('20%y-%m-%d %X')
+    tomorrowstr = tomorrow.strftime('20%y-%m-%d %X')
     todaystr = todaystr.replace(':', '%3A')
     tomorrowstr = tomorrowstr.replace(':', '%3A')
-    print(todaystr+tomorrowstr)
+    todaystr = todaystr.replace(' ', '%20')
+    tomorrowstr = tomorrowstr.replace(' ', '%20')
+
     file = url+'?start='+todaystr+'&end='+tomorrowstr+'&fields=ee'
     path = 'hinnad.csv'
     

@@ -9,4 +9,4 @@
 9,02:25,15:28,temp>10,Arvuti
 10,22:20,11:23,temp<10,Triikraud
 11,23:20,12:23,temp<5,Printer
-12,00:20,13:23,temp<4,Ahi
+12,00:20,13:23,temp<4,Ahi13,0,0,0,Muusikakeskus,25

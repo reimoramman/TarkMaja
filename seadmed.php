@@ -7,7 +7,7 @@
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
     var dataPoints = [];
- 
+
 function getDataPointsFromCSV(csv) {
     var dataPoints = csvLines = points = [];
     csvLines = csv.split(/[\r?\n|\r|\n]+/);
@@ -35,10 +35,10 @@ $.get("stat.csv", function(data) {
     });
 		
     chart.render();
- 
+
 });
-  </script>
- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <body>
 <div class="container">
 

@@ -1,9 +1,10 @@
 <?php
 	require("header.php");
 	
-	$hind= file_get_contents('https://dashboard.elering.ee/api/nps/price/EE/latest');
+	$hind= file_get_contents('https://dashboard.elering.ee/api/nps/price/EE/current');
 	
-	$v2lja=substr($hind, -10, 7);
+	$ind=strpos($hind, "price");
+	$v2lja = substr($hind, $ind+7, strlen($hind)-59);
 	
 	if (isset($_POST["price"])){
 		$all_text=implode(',', $_POST);
@@ -52,19 +53,7 @@
                 <input type="number" name="p6hihind" value="p6hihind"><br>
             <br></p>
 			<div id="borsihinnad" style="display:none"><br>
-				<label class ="radiobtn">Püsiv võrgutasu
-					<input id="tasu" type="radio" name="borsivalik" value="kohtoim" onclick="kohaletoimetamisetasu()">
-					<span class="checkmark"></span>
-				</label><br>
-				<label class ="radiobtn">Muutuv võrgutasu
-					<input id="vork" type="radio" name="borsivalik" value="vorktasu" onclick="vorgutasu()">
-					<span class="checkmark"></span>
-				</label><br>
-				<p>Viimane börsihind on <?php echo $v2lja/1000;?> €/kWh</p>
-				<p id="text6" style="display:none">
-				<legend>Võrgutasu</legend>
-					<input type="number" name="kohaletasu" value="kohaletasu"><br>
-				<br></p>
+				<p>Viimane börsihind on <?php echo $v2lja/10;?> senti/kWh</p>
 				<p id="text7" style="display:none">
 				<legend>Võrgutasu päeval (kWh)</legend>
 					<input type="number" name="v6rkp2ev" value="v6rkp2aev"><br>

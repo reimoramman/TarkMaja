@@ -50,7 +50,7 @@ function getDataPointsFromCSV(csv,device_id) {
     csvLines = csv.split(/[\r?\n|\r|\n]+/);
         
     for (var i = 0; i < csvLines.length; i++)
-        if (csvLines[i].split(",")[0].localeCompare(device_id)) {
+        if (csvLines[i].split(",")[0]==device_id) {
             points = csvLines[i].split(",").slice(1,-1);
 			for (var j = 0; j < points.length/2; j++)
 				dataPoints.push({ 

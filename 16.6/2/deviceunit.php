@@ -1,8 +1,7 @@
 <form method="POST">
-<div class="button">
-	<input type="submit" value= "Lülita sisse" name="sisse" >
-	<input type="submit" value= "Lülita välja" name ="v2lja">
-	<span class="slider"></span>
+<div class="switch">
+	<input type="submit" value= "Lülita sisse" name="sisse<?php echo $array[$i][0] ; ?>" id="sisse<?php echo $array[$i][0] ; ?>">
+	<input type="submit" value= "Lülita välja" name ="v2lja<?php echo $array[$i][0] ; ?>" id="v2lja<?php echo $array[$i][0] ; ?>">
 </div><br>
 <p>Seadme võimsus: <?php echo $array[$i][5] ; ?></p>
 <div id="chartContainer<?php echo $array[$i][0] ; ?>" style="height: 300px; width: 100%;">
@@ -10,11 +9,9 @@
 <a href="tingimused.php">
 	<button>Tingimused</button>
 </a><br><br>
-	<div class="delete">
-	<input type="button" value="Uuenda" name="uuenda" >
-	<input type="button" value="Kustuta" name="kustuta" >			
+	<div class="manage">
+		<input type="submit" value="Uuenda" name="uuenda<?php echo $array[$i][0] ; ?>" id="uuenda<?php echo $array[$i][0] ; ?>">
+		<input type="submit" value="Kustuta" name="kustuta<?php echo $array[$i][0] ; ?>" id="kustuta<?php echo $array[$i][0] ; ?>">			
 	</div>
-	<div class="submit">
-		<input type="submit" name="submit" value="Salvesta">
-	</div> 
+	
 </form>

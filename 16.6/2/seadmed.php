@@ -21,6 +21,33 @@
 	}
 	echo $array[0][0];
 	fclose($file_handle);
+	
+	for	($i=0;$i<$linecount;$i++){
+		
+		if (isset($_POST["sisse" .($i+1)])){
+			$switch=file_get_contents("status.txt");
+			$switch_array = explode("\n", $switch);
+			$switch_array[$i]=1;
+			file_put_contents("status.txt", implode("\n",$switch_array));
+		}
+		if (isset($_POST["v2lja" .($i+1)])){
+			$switch=file_get_contents("status.txt");
+			$switch_array = explode("\n", $switch);
+			$switch_array[$i]=0;
+			file_put_contents("status.txt", implode("\n",$switch_array));
+		}
+		if (isset($_POST["uuenda" .($i+1)])){
+			exec('sudo python arvutused.py');
+			exec('sudo python statistika.py');
+		}
+		if (isset($_POST["kustuta" .($i+1)])){
+			$switch=file_get_contents("tingimused.txt");
+			$switch_array = explode("\n", $switch);
+			array_splice($switch_array,$i,1);
+			file_put_contents("tingimused.txt", implode("\n",$switch_array));
+		}
+	}	
+	
     require("header.php");
 ?>
 <!DOCTYPE html>

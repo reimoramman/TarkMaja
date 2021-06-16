@@ -1,10 +1,8 @@
-from datetime import datetime, timedelta, date
-import urllib.request, json
-import os
+from datetime import datetime
 import datetime
-import time
 import csv
-import re
+import datetime
+
 
 
 def timeOfWeek():
@@ -17,20 +15,49 @@ def timeOfWeek():
 #timeOfWeek()
 #funktsioon timeOfWeek t22tab
 
+
+
 def splitPrices():
   cheapTimes=[]
   expensiveTimes=[]
-  dayTotal=0
+  total=0
+  halfOfTotal=0
+  times=[]
+  prices=[]
   with open ('hinnad.csv', 'rt') as todaysPrices:
     hinnad= csv.reader(todaysPrices)
     next(hinnad)
     for line in hinnad:
       hinnad=("\t".join(line))
-      hinnad1=re.sub(r"[\n\t\s]*", "", hinnad)
-      print(hinnad+hinnad1)
+      hinnad=hinnad.replace('"', "")
+      hinnad=hinnad.replace(";",",")
+      hinnad=hinnad.replace('\t', '.')
+      times.append(hinnad[22:27])
+      prices.append(float(hinnad[28:34]))
+
+    for hind in prices:
+      total+=hind
+
+    halfOfTotal=total/23
+
+    print(times)
+    print(prices)
+    print(total)
+    print(halfOfTotal)
+
+    i=0
+    while i < 23:
+      if prices[i] > halfOfTotal:
+        expensiveTimes.append(prices[i])
+        i+=1
+      elif prices[i] <= halfOfTotal:
+        cheapTimes.append(prices[i])
+        i+=1
+
+    print(expensiveTimes)
+    print(cheapTimes)
+
+
+
 
 splitPrices()
-
-myString = "I want to Remove all white \t spaces, new lines \n and tabs \t"
-output   = re.sub(r"[\n\t\s]*", "", myString)
-print(myString+output)

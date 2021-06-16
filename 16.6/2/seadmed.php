@@ -6,7 +6,6 @@
 	  $line = fgets($handle);
 	  $linecount++;
 	}
-
 	fclose($handle);
 
 	
@@ -21,6 +20,28 @@
 	}
 	echo $array[0][0];
 	fclose($file_handle);
+	
+	$filestats="stat.txt";
+	$linecountstat = 0;
+	$handlestat = fopen($filestats, "r");
+	while(!feof($handlestat)){
+	  $linestat = fgets($handlestat);
+	  $linecountstat++;
+	}
+	fclose($handlestat);
+
+	
+	$file_handle_stat = fopen("stat.txt", "r");
+	$stat = array($linecountstat);
+	$linestat = 0;
+	while (!feof($file_handle_stat) ) {
+		$line_of_text_stat = fgets($file_handle_stat);
+		$partsstat = explode(',', $line_of_text_stat);
+		$stat[$linestat]=$partsstat;
+		$linestat++;
+	}
+	echo $stat[0][0];
+	fclose($file_handle_stat);
 	
 	for	($i=0;$i<$linecount;$i++){
 		
@@ -47,30 +68,26 @@
 			file_put_contents("tingimused.txt", implode("\n",$switch_array));
 		}
 	}	
-	
     require("header.php");
 ?>
 <!DOCTYPE html>
 <html lang="et">
-
 <body>
     <h1>Seadmed</h1><br><br>
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript">
-function myFunction(number) {
+function myFunction(number,iterable) {
   var x = document.getElementById("myDiv"+number);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
-  getChart(number);
+  getChart(number,iterable);
 }
-
   var array = <?php echo json_encode($array); ?>;
-  var dataPoints = [];
-	
+  var dataPoints = [];	
 function getDataPointsFromCSV(csv,device_id) {
     var dataPoints = csvLines = points = [];
 	
@@ -87,11 +104,11 @@ function getDataPointsFromCSV(csv,device_id) {
 	}
     return dataPoints;
 }
-function getChart(device_id) {
+function getChart(device_id,i) {
 $.get("sorted.csv", function(data) {
 	var chart = new CanvasJS.Chart("chartContainer"+device_id, {
 		title: {
-		text: array[device_id-1][4],
+		text: array[i][4],
 		},
 		data: [{
 		type: "line",
@@ -104,14 +121,11 @@ $.get("sorted.csv", function(data) {
 </script>
 <?php
 for ($i= 0; $i < $linecount; $i++){
-	echo ('<h2 onclick="myFunction(' .$array[$i][0] .')">' .$array[$i][4] .'</h2>');
+	echo ('<h2 onclick="myFunction(' .$array[$i][0] .',' .$i .')">' .$array[$i][4] .'</h2>');
 	echo ('<div class="container" id="myDiv' .$array[$i][0] .'" style="display:none">');
 	include("deviceunit.php");
 	echo ('</div>');
-	;
 }
 ?>
-	
-    
 </body>
 </html>

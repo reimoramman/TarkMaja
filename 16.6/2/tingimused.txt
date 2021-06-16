@@ -3,12 +3,6 @@
 3,13:20,04:23,temp<21,Boiler,15
 4,17:20,05:23,temp<24,Pesumasin,15
 5,22:24,12:29,temp>23,Külmkapp,15
-6,19:20,07:23,temp<19,Uks,15
-7,11:20,08:23,temp<18,Laud,15
-8,12:20,09:23,temp<17,Tool,15
-9,02:25,15:28,temp>10,Arvuti,15
-10,22:20,11:23,temp<10,Triikraud,15
-11,23:20,12:23,temp<5,Printer,15
-12,00:20,13:23,temp<4,Ahi,15
-14,aeg_algus,aeg_lopp,tingimus,Pliit,15
-15,17:52,15:50,twrtr<45,Boiler1,2000
+6,22:20,11:23,temp<10,Triikraud,15
+7,23:20,12:23,temp<5,Printer,15
+8,17:52,15:50,twrtr<45,Boiler1,2000

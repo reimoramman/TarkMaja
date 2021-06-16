@@ -38,10 +38,10 @@ function myFunction(number) {
   } else {
     x.style.display = "none";
   }
-}
-var array = <?php echo json_encode($array); ?>;
-
   
+}
+
+  var array = <?php echo json_encode($array); ?>;
   var dataPoints = [];
 	
 function getDataPointsFromCSV(csv,device_id) {
@@ -54,27 +54,26 @@ function getDataPointsFromCSV(csv,device_id) {
             points = csvLines[i].split(",").slice(1,-1);
 			for (var j = 0; j < points.length/2; j++)
 				dataPoints.push({ 
-					x: new Date(points[j*2-1]), 
-					y: parseFloat(points[j*2]) 		
+					x: new Date(points[j*2]), 
+					y: parseFloat(points[j*2+1]) 		
 	    });
 	}
     return dataPoints;
 }
-var i;
-for (i = 0; i < 1; i++)
-	var device_id=array[i][0];
-	$.get("sorted.csv", device_id, function(data,id) {
-		var chart = new CanvasJS.Chart("chartContainer"+id, {
-			title: {
-			text: array[i][4],
-			},
-			data: [{
-			type: "line",
-			dataPoints: getDataPointsFromCSV(data,id)
-		}]
-		});
-		chart.render();
+
+var device_id=array[0][0];
+$.get("sorted.csv", function(data) {
+	var chart = new CanvasJS.Chart("chartContainer"+device_id, {
+		title: {
+		text: array[0][4],
+		},
+		data: [{
+		type: "line",
+		dataPoints: getDataPointsFromCSV(data,device_id)
+	}]
 	});
+	chart.render();
+});
 </script>
 <?php
 for ($i= 0; $i < $linecount; $i++){

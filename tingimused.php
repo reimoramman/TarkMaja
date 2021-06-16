@@ -45,19 +45,41 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<script>
+function add_field()
+{
+  var total_text=document.getElementsByClassName("input_text");
+  total_text=total_text.length+1;
+  document.getElementById("field_div").innerHTML=document.getElementById("field_div").innerHTML+
+  "<p id='input_text"+total_text+"_wrapper'><input type='text' class='input_text' id='input_text"+total_text+"' placeholder='Enter Text'><input type='button' value='Remove' onclick=remove_field('input_text"+total_text+"');></p>";
+}
+function remove_field(id)
+{
+  document.getElementById(id+"_wrapper").innerHTML="";
+}
+</script>
+</head>
 <body>
-  <div class="container">
   <div id="pealkiri">
 		<h1>Tingimused</h1>
 	</div>
-  <div id="sissejuhatus">
-  <select>
-  <form method="POST">
+
+  <div id="seadmed">
+	<div>
+	<div id="wrapper">
+<div id="field_div">
+</div>
+</div>
+
+  <br>
+  <div id="sisu">
+    <form method="POST">
 	<script src="tingimused.js"></script>
 	<legend>Millist seadet haldad?</legend>
 	<select name="deviceinput" id="deviceinput" onchange="doChange()">
 	<option value="" selected disabled>Seade</option>
-	<?php for ($i= 0; $i < $linecount-1; $i++){
+	<?php for ($i= 0; $i < $linecount; $i++){
 		echo '<option value="' .$array[$i][0] .'"';
 		echo ">" .$array[$i][4] ."</option> \n";
 	}?>
@@ -75,6 +97,9 @@
 			tingimus.value=array[device.value-1][3];
         }  
     </script>
+
+			<input type="button" value="Add TextBox" onclick="add_field();">
+
       <legend>Mis kell seade sisselülitub?</legend>
         <input type="time" id="startTime" name="startTime" value="">
       <br>
@@ -87,13 +112,5 @@
         <input type="submit" name="submit" value="Salvesta">
     </form>
   </div>
-  </div>
 </body>
 </html>
-
-<?php if(isset($_POST["startTime"]) && isset($_POST["stopTime"])){
-  $tingimused = $_POST['startTime']. "\n". $_POST['stopTime']. "\n";
-  file_put_contents('tingimused.txt', $tingimused);
-}
-?>
-

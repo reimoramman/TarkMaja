@@ -38,7 +38,7 @@ function myFunction(number) {
   } else {
     x.style.display = "none";
   }
-  
+  getChart(number);
 }
 
   var array = <?php echo json_encode($array); ?>;
@@ -60,12 +60,11 @@ function getDataPointsFromCSV(csv,device_id) {
 	}
     return dataPoints;
 }
-
-var device_id=array[0][0];
+function getChart(device_id) {
 $.get("sorted.csv", function(data) {
 	var chart = new CanvasJS.Chart("chartContainer"+device_id, {
 		title: {
-		text: array[0][4],
+		text: array[device_id-1][4],
 		},
 		data: [{
 		type: "line",
@@ -74,6 +73,7 @@ $.get("sorted.csv", function(data) {
 	});
 	chart.render();
 });
+}
 </script>
 <?php
 for ($i= 0; $i < $linecount; $i++){

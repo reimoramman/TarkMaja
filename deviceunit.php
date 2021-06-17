@@ -19,6 +19,12 @@
     <th>Välja</th>
     <th>Viga</th>
   </tr>
+
+	<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
 <?php 
 for ($j = 0; $j < $linecountstat; $j++){
 	if ($stat[$j][1]==$array[$i][0]){

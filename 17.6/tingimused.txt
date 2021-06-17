@@ -1,0 +1,8 @@
+1,08:20,00:27,31,Põrandaküte,15
+2,14:20,03:23,temp<22,Radiaator,15
+3,13:20,04:23,temp<21,Boiler,15
+4,17:20,05:23,temp<24,Pesumasin,15
+5,22:24,12:29,temp>23,Külmkapp,15
+6,22:20,11:23,temp<10,Triikraud,15
+7,23:20,12:23,temp<5,Printer,15
+8,17:52,15:50,twrtr<45,Boiler1,2000

@@ -46,6 +46,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+<div class="container">
   <div id="pealkiri">
 		<h1>Tingimused</h1>
 	</div>
@@ -57,6 +58,7 @@
   <div id="sisu">
     <form method="POST">
 	<script src="tingimused.js"></script>
+	<div id="sissejuhatus">
 	<legend>Millist seadet haldad?</legend>
 	<select name="deviceinput" id="deviceinput" onchange="doChange()">
 	<option value="" selected disabled>Seade</option>
@@ -78,14 +80,8 @@
 			tingimus.value=array[device.value-1][3];
         }  
     </script>
-      <legend>Mis kell seade sisselülitub?</legend>
-        <input type="time" id="startTime" value="">
-      <br>
-      <legend>Mis kell seade väljalülitub?</legend>
-        <input type="time" id="stopTime" value="">
-      <br>
-	  <legend>Mis tingimusel seade sisse lülitub?</legend>
-        <input type="text" id="tingimus" name="tingimus" value="">
+	  <legend>Sistesta ülemine hinnapiir</legend>
+        <input type="text"  name="tingimus" value="">
       <br><br>
       <div id="field_div">
 				</div>
@@ -98,5 +94,7 @@
 		</div>
   </div>
 	</div>
+	</div>
 </body>
+</div>
 </html>

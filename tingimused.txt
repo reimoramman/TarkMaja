@@ -1,6 +1,6 @@
-1,08:20,00:27,31,Põrandaküte
+1,3,12-15,50,Põrandaküte
 2,14:20,03:23,temp<22,Radiaator
-3,13:20,04:23,temp<21,Boiler
+3,3,12-15,temp<24,Boiler
 4,17:20,05:23,temp<24,Pesumasin
 5,22:24,12:29,temp>23,Külmkapp
 6,19:20,07:23,temp<19,Uks

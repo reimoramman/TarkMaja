@@ -45,33 +45,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<script>
-function add_field()
-{
-  var total_text=document.getElementsByClassName("input_text");
-  total_text=total_text.length+1;
-  document.getElementById("field_div").innerHTML=document.getElementById("field_div").innerHTML+
-  "<p id='input_text"+total_text+"_wrapper'><input type='text' class='input_text' id='input_text"+total_text+"' placeholder='Enter Text'><input type='button' value='Remove' onclick=remove_field('input_text"+total_text+"');></p>";
-}
-function remove_field(id)
-{
-  document.getElementById(id+"_wrapper").innerHTML="";
-}
-</script>
-</head>
 <body>
   <div id="pealkiri">
 		<h1>Tingimused</h1>
 	</div>
-
   <div id="seadmed">
-	<div>
-	<div id="wrapper">
-<div id="field_div">
-</div>
-</div>
-
+	
+  
+    <div>
   <br>
   <div id="sisu">
     <form method="POST">
@@ -97,20 +78,25 @@ function remove_field(id)
 			tingimus.value=array[device.value-1][3];
         }  
     </script>
-
-			<input type="button" value="Add TextBox" onclick="add_field();">
-
       <legend>Mis kell seade sisselülitub?</legend>
-        <input type="time" id="startTime" name="startTime" value="">
+        <input type="time" id="startTime" value="">
       <br>
       <legend>Mis kell seade väljalülitub?</legend>
-        <input type="time" id="stopTime" name="stopTime" value="">
+        <input type="time" id="stopTime" value="">
       <br>
 	  <legend>Mis tingimusel seade sisse lülitub?</legend>
         <input type="text" id="tingimus" name="tingimus" value="">
       <br><br>
+      <div id="field_div">
+				</div>
+			<input type="button" value="Kui kaua" onclick="howLong();">
+			<br>
+			<input type="button" value="Mis Kell" onclick="whatTime();">
+			<br>
         <input type="submit" name="submit" value="Salvesta">
     </form>
+		</div>
   </div>
+	</div>
 </body>
 </html>

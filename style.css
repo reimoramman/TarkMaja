@@ -70,6 +70,10 @@ a{
 	background-color: purple;
 }
 
-#banner{
-  text-align: center;
+.banner{
+  text-align: left;
+  margin: 20px;
+  max-width: 50%;
+  height: auto;
+  width: auto\9;/*ie8*/
 }

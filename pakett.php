@@ -1,10 +1,10 @@
-
 <?php
 	require("header.php");
 	
-	$hind= file_get_contents('https://dashboard.elering.ee/api/nps/price/EE/latest');
+	$hind= file_get_contents('https://dashboard.elering.ee/api/nps/price/EE/current');
 	
-	$v2lja=substr($hind, -10, 7);
+	$ind=strpos($hind, "price");
+	$v2lja = substr($hind, $ind+7, strlen($hind)-59);
 	
 	if (isset($_POST["price"])){
 		$all_text=implode(',', $_POST);
@@ -16,11 +16,11 @@
 <html lang="et">
 
 <body>
-    <div class="container">
+<div class="container">
     <div id="pealkiri">
-    <h1>Elektripakett</h1>
+        <h1>Elektripakett</h1>
     </div>
-    <div id="sissejuhatus">
+        <div id="sissejuhatus">
         <form class="pakett" method="POST">
 		<script src="pakett.js"></script>
             <legend>Fikseerimata hind, fikseeritud hind või börsihind?</legend>
@@ -54,25 +54,13 @@
                 <input type="number" name="p6hihind" value="p6hihind"><br>
             <br></p>
 			<div id="borsihinnad" style="display:none"><br>
-				<label class ="radiobtn">Kohaletoimetamisetasu
-					<input id="tasu" type="radio" name="borsivalik" value="kohtoim" onclick="kohaletoimetamisetasu()">
-					<span class="checkmark"></span>
-				</label><br>
-				<label class ="radiobtn">Võrgutasu
-					<input id="vork" type="radio" name="borsivalik" value="vorktasu" onclick="vorgutasu()">
-					<span class="checkmark"></span>
-				</label><br>
-				<p>Viimane börsihind on <?php echo $v2lja/1000;?> €/kW/h</p>
-				<p id="text6" style="display:none">
-				<legend>Kohaletoimetamise tasu</legend>
-					<input type="number" name="kohaletasu" value="kohaletasu"><br>
-				<br></p>
+				<p>Viimane börsihind on <?php echo $v2lja/10;?> senti/kWh</p>
 				<p id="text7" style="display:none">
-				<legend>Võrgutasu päeval (kW/h)</legend>
+				<legend>Võrgutasu päeval (kWh)</legend>
 					<input type="number" name="v6rkp2ev" value="v6rkp2aev"><br>
 				<br></p>
 				<p id="text8" style="display:none">
-				<legend>Võrgutasu öösel (kW/h)</legend>
+				<legend>Võrgutasu öösel (kWh)</legend>
 					<input type="number" name="v6rk66" value="v6rk66"><br>
 				<br></p>
 			</div>
@@ -81,6 +69,7 @@
                 <input type="submit" name="submit" value="Salvesta">
             </div>
         </form>
-    </div>          
+    </div>
+</div>          
 </body>
 </html> 

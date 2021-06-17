@@ -1,106 +1,139 @@
 <?php
+	$file="tingimused.txt";
+	$linecount = 0;
+	$handle = fopen($file, "r");
+	while(!feof($handle)){
+	  $line = fgets($handle);
+	  $linecount++;
+	}
+	fclose($handle);
+
+	
+	$file_handle = fopen("tingimused.txt", "r");
+	$array = array($linecount);
+	$line = 0;
+	while (!feof($file_handle) ) {
+		$line_of_text = fgets($file_handle);
+		$parts = explode(',', $line_of_text);
+		$array[$line]=$parts;
+		$line++;
+	}
+	echo $array[0][0];
+	fclose($file_handle);
+	
+	$filestats="stat.txt";
+	$linecountstat = 0;
+	$handlestat = fopen($filestats, "r");
+	while(!feof($handlestat)){
+	  $linestat = fgets($handlestat);
+	  $linecountstat++;
+	}
+	fclose($handlestat);
+
+	
+	$file_handle_stat = fopen("stat.txt", "r");
+	$stat = array($linecountstat);
+	$linestat = 0;
+	while (!feof($file_handle_stat) ) {
+		$line_of_text_stat = fgets($file_handle_stat);
+		$partsstat = explode(',', $line_of_text_stat);
+		$stat[$linestat]=$partsstat;
+		$linestat++;
+	}
+	echo $stat[0][0];
+	fclose($file_handle_stat);
+	
+	for	($i=0;$i<$linecount;$i++){
+		
+		if (isset($_POST["sisse" .($i+1)])){
+			$switch=file_get_contents("status.txt");
+			$switch_array = explode("\n", $switch);
+			$switch_array[$i]=1;
+			file_put_contents("status.txt", implode("\n",$switch_array));
+		}
+		if (isset($_POST["v2lja" .($i+1)])){
+			$switch=file_get_contents("status.txt");
+			$switch_array = explode("\n", $switch);
+			$switch_array[$i]=0;
+			file_put_contents("status.txt", implode("\n",$switch_array));
+		}
+		if (isset($_POST["uuenda" .($i+1)])){
+			exec('sudo python arvutused.py');
+			exec('sudo python statistika.py');
+		}
+		if (isset($_POST["kustuta" .($i+1)])){
+			$switch=file_get_contents("tingimused.txt");
+			$switch_array = explode("\n", $switch);
+			array_splice($switch_array,$i,1);
+			file_put_contents("tingimused.txt", implode("\n",$switch_array));
+		}
+	}	
     require("header.php");
 ?>
 <!DOCTYPE html>
 <html lang="et">
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script type="text/javascript">
-    var dataPoints = [];
-
-function getDataPointsFromCSV(csv) {
+<body>
+<div class="container">
+    <h1>Seadmed</h1><br><br>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script type="text/javascript">
+function myFunction(number,iterable) {
+  var x = document.getElementById("myDiv"+number);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+	var l;
+	for(l = 0; l < array.length; l++)
+		if (number!=array[l][0]) {
+			var y = document.getElementById("myDiv"+array[l][0]);
+			y.style.display = "none";
+		}
+  } else {
+    x.style.display = "none";
+  }
+  getChart(number,iterable);
+}
+  var array = <?php echo json_encode($array); ?>;
+  var dataPoints = [];	
+function getDataPointsFromCSV(csv,device_id) {
     var dataPoints = csvLines = points = [];
+	
     csvLines = csv.split(/[\r?\n|\r|\n]+/);
         
     for (var i = 0; i < csvLines.length; i++)
-        if (csvLines[i].length > 0) {
-            points = csvLines[i].split(",");
-            dataPoints.push({ 
-                x: new Date(points[0]), 
-                y: parseFloat(points[1]) 		
+        if (csvLines[i].split(",")[0]==device_id) {
+            points = csvLines[i].split(",").slice(1,-1);
+			for (var j = 0; j < points.length/2; j++)
+				dataPoints.push({ 
+					x: new Date(points[j*2]), 
+					y: parseFloat(points[j*2+1]) 		
 	    });
 	}
     return dataPoints;
 }
-	 
-$.get("stat.csv", function(data) {
-    var chart = new CanvasJS.Chart("chartContainer", {
-        title: {
-	    text: "Statistika",
-        },
-        data: [{
-	    type: "line",
-	    dataPoints: getDataPointsFromCSV(data)
+function getChart(device_id,i) {
+$.get("sorted.csv", function(data) {
+	var chart = new CanvasJS.Chart("chartContainer"+device_id, {
+		title: {
+		text: array[i][4],
+		},
+		data: [{
+		type: "line",
+		dataPoints: getDataPointsFromCSV(data,device_id)
 	}]
-    });
-		
-    chart.render();
-
+	});
+	chart.render();
 });
+}
 </script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<body>
-<div class="container">
-
-
-    <div id="pealkiri">
-    <h1>Seadmed</h1>
-    </div>
-    <div id="sissejuhatus">
-	<h2><?php echo $_GET["seadme_nimetus"]?></h2>
-    <form method="POST">
-        <div class="button">
-            <input type="submit" value= "LÃ¼lita sisse" name="sisse" style="background-color:rgba(161, 0, 161, 0.400)">
-            <input type="submit" value= "LÃ¼lita vÃ¤lja" name = "vÃ¤lja" style="background-color:rgba(161, 0, 161, 0.400)">
-            <span class="slider"></span>
-        </div><br>
-    </form>
-
-	<div id="chartContainer" style="height: 300px; width: 100%;">
-	</div>
-
-        <h2>Seadme olek</h2>
-		<p>Seadme vÃµimsus: <?php echo $_GET["seadme_voimsus"] ?></p>
-		
-            <!-- <h2>seadme logi</h2>
-                    <?php
-                    $lines = file('logfile.txt');
-                    $first5 = array_slice($lines, 0, 5);
-                    echo implode("<ul></ul>", $first5);
-                    
-                    if(isset($_POST['kogulogi']))
-                    {
-                            $content = file('logfile.txt');
-                            foreach ($content as $line){ 
-                                echo ('<ul>' . $line . '</ul>');
-                            }
-                    }
-					if (isset($_POST['test1'])){
-						$dir = basename(dirname(__FILE__));
-						shell_exec("sh /home/pi/Desktop/tark-maja/relee_sisselylitus.sh");
-						shell_exec("python3.5 /home/pi/Desktop/tark-maja/users/$dir/manual_logwrite.py");
-					}
-					if (isset($_POST['test'])){
-						$dir = basename(dirname(__FILE__));
-						shell_exec("sh /home/pi/Desktop/tark-maja/relee_valjalylitus.sh");
-						shell_exec("python3.5 /home/pi/Desktop/tark-maja/users/$dir/manual_logwrite.py");
-						
-					}
-					
-					
-                ?>  -->
-		<a href="tingimused.php">
-        <div class="onebutton" >
-			<button>Tingimused</button>
-        </div>
-		</a><br><br>
-		<form method="POST">
-           <div class="delete">
-            <input type="button" value="Uuenda" name="uuenda" style="background-color:rgba(161, 0, 161, 0.400)" >
-			<input type="button" value="Kustuta" name="kustuta" style="background-color:rgba(161, 0, 161, 0.400)">
-           </div> 
-        </form>
-</div>
+<?php
+for ($i= 0; $i < $linecount; $i++){
+	echo ('<h2 onclick="myFunction(' .$array[$i][0] .',' .$i .')">' .$array[$i][4] .'</h2>');
+	echo ('<div class="container" id="myDiv' .$array[$i][0] .'" style="display:none">');
+	include("deviceunit.php");
+	echo ('</div>');
+}
+?>
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ def GetPrices():
 
     url = 'https://dashboard.elering.ee/api/nps/price/csv'
 
-    today = datetime.datetime.now().astimezone('Europe/Tallinn')
+    today = datetime.datetime.now()
     tomorrow = today + datetime.timedelta(1,0,0,0,0,0,0)
 
     todaystr = today.strftime('20%y-%m-%d %X')

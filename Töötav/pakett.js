@@ -53,31 +53,3 @@ function borsihind(){
 	text4.style.display = "none";
 	}
 }
-
-function kohaletoimetamisetasu(){
-	
-	var radio = document.getElementById("tasu");
-	var text6 = document.getElementById("text6");
-	var text7 = document.getElementById("text7");
-	var text8 = document.getElementById("text8");
-	
-	if (radio.checked == true){
-	text6.style.display = "block";
-	text7.style.display = "none";
-	text8.style.display = "none";
-	}
-}
-
-function vorgutasu(){
-	
-	var radio = document.getElementById("vork");
-	var text6 = document.getElementById("text6");
-	var text7 = document.getElementById("text7");
-	var text8 = document.getElementById("text8");
-	
-	if (radio.checked == true){
-	text6.style.display = "none";
-	text7.style.display = "block";
-	text8.style.display = "block";
-	}
-}

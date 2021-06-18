@@ -1,7 +1,59 @@
 from datetime import datetime
+import time
+from datetime import datetime
 import datetime
 import csv
 import datetime
+import datetime
+import csv
+import datetime
+
+eof=False
+while(eof==False):
+    uuenda()
+    time.sleep(60)
+
+def uuenda():
+    listoflist= []
+    now = datetime.datetime.now()
+    fm = open("tingimused.txt", "r")
+    tingimused = fm.readlines()
+    for rida in tingimused:
+        list = []
+        andmed = rida.split(",")
+        list.append(andmed[0])
+        list.append(andmed[1])
+        list.append(andmed[2])
+        list.append(andmed[3])
+        listoflist.append(list)
+    
+    
+    
+
+    f = open("status.csv", 'w')
+    for elem in listoflist:
+        listcheaptimes = 
+        if (elem[2].split('-')[0]>=int(time.strftime('%HH'))):
+            f.write(1)
+        if (elem[2].split('-')[1]>=int(time.strftime('%HH'))):
+            f.write(0)
+    f.close()
+    for elem in listoflist:
+
+
+def timeOfWeek():
+  dayNr = datetime.datetime.today().weekday()
+  if dayNr<5:
+    return('Weekday')
+  else:
+    return('Weekend')
+
+#timeOfWeek()
+#funktsioon timeOfWeek t22tab
+
+
+
+
 
 
 
@@ -59,8 +111,7 @@ def splitPrices():
 
     print(expensiveTimes)
     print(cheapTimes)
+    for t in times:
+        t = t.split(":")[0]
 
-
-
-
-splitPrices()
+    return times

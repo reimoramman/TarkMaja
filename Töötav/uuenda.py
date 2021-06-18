@@ -1,9 +1,43 @@
+import time
 from datetime import datetime
 import datetime
 import csv
-import datetime
 
+eof=False
+while(eof==False):
+    uuenda()
+    time.sleep(3600)
 
+def uuenda():
+    listoflist= []
+    fm = open("tingimused.txt", "r")
+    tingimused = fm.readlines()
+    for rida in tingimused:
+        list = []
+        andmed = rida.split(",")
+        list.append(andmed[0])
+        list.append(andmed[1])
+        list.append(andmed[2])
+        list.append(andmed[3])
+        listoflist.append(list)
+
+    status(listoflist)
+    
+def status(list):
+    f = open("status.csv", 'w')
+    times = splitPrices()[0]
+    price=splitPrices()[1]
+    for elem in range(len(list)): 
+      counter = 0
+      if(counter<list[elem][1] and times[0] and price[elem]<=list[elem][3]):
+
+        if (list[elem][2].split('-')[0]>=int(time.strftime('%HH'))):
+            f.write(1)
+            counter+=1
+        if (list[elem][2].split('-')[1]>=int(time.strftime('%HH'))):
+            f.write(0)
+        
+    f.close()
 
 def timeOfWeek():
   dayNr = datetime.datetime.today().weekday()
@@ -14,8 +48,6 @@ def timeOfWeek():
 
 #timeOfWeek()
 #funktsioon timeOfWeek t22tab
-
-
 
 def splitPrices():
   cheapTimes=[]
@@ -56,11 +88,9 @@ def splitPrices():
     prices, times = zip(*sorted(zip(prices, times)))
     print(times)
 
-
     print(expensiveTimes)
     print(cheapTimes)
+    for t in times:
+        t = t.split(":")[0]
 
-
-
-
-splitPrices()
+    return times, prices

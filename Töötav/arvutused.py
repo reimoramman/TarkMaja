@@ -53,9 +53,6 @@ def splitPrices():
       elif prices[i] <= halfOfTotal:
         cheapTimes.append(prices[i])
         i+=1
-    prices, times = zip(*sorted(zip(prices, times)))
-    print(times)
-
 
     print(expensiveTimes)
     print(cheapTimes)
